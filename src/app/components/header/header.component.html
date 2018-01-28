@@ -1,7 +1,13 @@
 <header>
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" ngClass="header mat-elevation-z3">
     <mat-toolbar-row>
       <span>Trusting Social</span>
+      <span class="header__spacer"></span>
+
+      <a href="https://github.com/phamvanthang310/Trusting-Social-Test" class="header__link" mat-icon-button
+         target="_blank" matTooltip="github repo">
+        <mat-icon ngClass="fa-2x" fontIcon="fa-github" fontSet="fa"></mat-icon>
+      </a>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
