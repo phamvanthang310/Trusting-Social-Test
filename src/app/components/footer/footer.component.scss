@@ -1,0 +1,12 @@
+footer {
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  .caption {
+    .fa-heart {
+      color: red;
+    }
+  }
+}

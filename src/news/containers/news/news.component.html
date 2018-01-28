@@ -1,0 +1,7 @@
+<div class="news">
+  <mat-spinner color="accent" mode="intermediate" *ngIf="(loading$ | async)"></mat-spinner>
+  <app-news-item *ngFor="let details of (news$ | async)" [details]="details"></app-news-item>
+  <div class="news__load-more">
+    <button mat-button color="primary">LOAD MORE</button>
+  </div>
+</div>
