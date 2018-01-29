@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>{{data?.headline.main}}</h2>
+<mat-dialog-content>
+  <div class="news__item">
+    <div class="news__multimedia" *ngIf="data.multimedia[0]">
+      <img [src]="'http://www.nytimes.com/' + data.multimedia[0]?.url" alt="">
+    </div>
+    <div class="news__snipped">
+      {{data.snippet}}
+      <a [href]="data.web_url" target="_blank">Read more »</a>
+    </div>
+    <div class="news__pub-date">
+      {{data.pub_date | date:'medium'}}
+    </div>
+    <div class="news__source">
+      <span>Source: </span>{{data.source}}
+    </div>
+  </div>
+</mat-dialog-content>

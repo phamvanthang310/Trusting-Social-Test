@@ -5,6 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import { getNewYorkTimesLoading, getNewYorkTimesNews } from '../../store/selectors';
 import { LoadNewYorkTimes } from '../../store/actions';
 import { News } from '../../models';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { NewsDetailComponent } from '../../components';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -17,7 +20,8 @@ export class NewsComponent implements OnInit {
   news$: Observable<Array<News>>;
   loading$: Observable<boolean>;
 
-  constructor(private store: Store<NewsState>) {
+  constructor(private title: Title, private store: Store<NewsState>, private dialog: MatDialog) {
+    title.setTitle('TrustingSocialTest | ThangPham');
   }
 
   ngOnInit() {
@@ -35,6 +39,10 @@ export class NewsComponent implements OnInit {
   }
 
   onClick(news: News) {
-    console.log(news);
+    const config: MatDialogConfig = {
+      data: news,
+      width: '1000px'
+    };
+    const dialogRef = this.dialog.open(NewsDetailComponent, config);
   }
 }
