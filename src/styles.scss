@@ -1,14 +1,5 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-//@import "~font-awesome/scss/font-awesome";
-//$fa-font-path : '../node_modules/font-awesome/fonts';
-
-//Color Palette
-$snow: #FBFBFB;
-$quartz: #E1E1E6;
-$charcoal: #494848;
-$dark-gray: #A8A7A7;
-$light-grey: #D0D0D0;
-$pink-flare: #C6BCBD;
+@import "./assets/style/variable";
 
 * {
   font-family: Roboto, "Helvetica Neue", sans-serif;

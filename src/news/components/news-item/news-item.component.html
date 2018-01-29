@@ -1,12 +1,20 @@
-<mat-card class="news__container">
+<div class="news__container mat-elevation-z2">
   <div class="news__item">
-    <mat-card-header>
-      <mat-card-title>{{details?.snippet}}</mat-card-title>
-      <mat-card-subtitle>{{details?.pub_date | date}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      {{details?.source}}
-    </mat-card-content>
+    <div class="news__header">
+      <div class="snipped">
+        {{details?.snippet}}
+      </div>
+      <div class="pub-date">
+        {{details?.pub_date | date:'medium'}}
+      </div>
+    </div>
+    <div class="news__multimedia">
+      <img [src]="'http://www.nytimes.com/' + details.multimedia[0]?.url" alt="">
+    </div>
+    <div class="news__footer">
+      <div class="source">
+        <span>Source: </span>{{details?.source}}
+      </div>
+    </div>
   </div>
-</mat-card>
+</div>

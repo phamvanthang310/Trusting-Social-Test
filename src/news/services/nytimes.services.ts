@@ -4,15 +4,12 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class NYTimesServices {
+  private readonly API_KEY = '5763846de30d489aa867f0711e2b031c';
 
   constructor(private http: HttpClient) {
-
   }
 
-  getNews(): Observable<any> {
-    console.log('NYTimesServices#getNews');
-    return this.http.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?' +
-      'api-key=5763846de30d489aa867f0711e2b031c&q=singapore&page=0');
+  getNews(page: number = 0): Observable<any> {
+    return this.http.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${this.API_KEY}&q=vietnam&page=${page}`);
   }
-
 }
