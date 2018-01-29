@@ -28,7 +28,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
     HeaderComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
