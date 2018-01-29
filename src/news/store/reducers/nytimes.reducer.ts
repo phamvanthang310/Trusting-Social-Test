@@ -5,13 +5,15 @@ export interface NYTState {
   entities: { [id: string]: News };
   loading: boolean;
   loaded: boolean;
+  page: number;
   error?: any;
 }
 
 const initialState: NYTState = {
   entities: {},
   loading: false,
-  loaded: false
+  loaded: false,
+  page: 0
 };
 
 export function nytReducer(state = initialState, action: NewsAction): NYTState {
@@ -21,7 +23,8 @@ export function nytReducer(state = initialState, action: NewsAction): NYTState {
       return {
         ...state,
         loading: true,
-        loaded: false
+        loaded: false,
+        page: action.payload,
       };
     }
     case LOAD_NEW_YORK_TIMES_SUCCESS: {

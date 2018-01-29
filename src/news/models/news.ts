@@ -7,4 +7,5 @@ export interface News {
   multimedia: Array<Multimedia>;
   pub_date: string;
   source: string;
+  headline: { main: string };
 }

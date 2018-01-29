@@ -1,6 +1,10 @@
 .news {
   margin: 0 15px;
 
+  &__container {
+    margin: 15px 0;
+  }
+
   &__load-more {
     display: flex;
     justify-content: center;

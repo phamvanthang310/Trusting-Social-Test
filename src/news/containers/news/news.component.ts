@@ -12,6 +12,8 @@ import { News } from '../../models';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
+  private page = 0;
+
   news$: Observable<Array<News>>;
   loading$: Observable<boolean>;
 
@@ -19,8 +21,20 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new LoadNewYorkTimes());
+    this.store.dispatch(new LoadNewYorkTimes(this.page));
     this.news$ = this.store.select(getNewYorkTimesNews);
     this.loading$ = this.store.select(getNewYorkTimesLoading);
+  }
+
+  trackByNews(index: number, news: News) {
+    return news._id;
+  }
+
+  loadMore() {
+    this.store.dispatch(new LoadNewYorkTimes(++this.page));
+  }
+
+  onClick(news: News) {
+    console.log(news);
   }
 }

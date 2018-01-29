@@ -9,7 +9,7 @@ export class NYTimesServices {
   constructor(private http: HttpClient) {
   }
 
-  getNews(page: number = 0): Observable<any> {
-    return this.http.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${this.API_KEY}&q=vietnam&page=${page}`);
+  getNews(page: number): Observable<any> {
+    return this.http.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${this.API_KEY}&page=${page}`);
   }
 }
