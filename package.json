@@ -2,9 +2,14 @@
   "name": "trusting-social-test",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "postinstall": "npm run build:ssr",
+    "start": "node dist/server.js",
     "build": "ng build --prod",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
