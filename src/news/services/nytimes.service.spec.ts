@@ -2,27 +2,23 @@ import { inject, TestBed } from '@angular/core/testing';
 
 import { NYTimesServices } from './nytimes.services';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs/Observable';
-
-class HttpClientMock {
-  get(url): Observable<any> {
-    return of({});
-  }
-}
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('NYTimeService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NYTimesServices,
-        {provide: HttpClient, useClass: HttpClientMock}
-      ]
+      imports: [HttpClientTestingModule],
+      providers: [
+        NYTimesServices
+      ],
     });
   });
 
-  it('should be created', inject([NYTimesServices, HttpClient], (service: NYTimesServices) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject([NYTimesServices, HttpClient],
+    (service: NYTimesServices, httpClient: HttpClient) => {
+      expect(service).toBeTruthy();
+      expect(httpClient).toBeTruthy();
+    }));
 
   it('be able to call The New York Times API', inject([NYTimesServices, HttpClient],
     (service: NYTimesServices, httpClient: HttpClient) => {

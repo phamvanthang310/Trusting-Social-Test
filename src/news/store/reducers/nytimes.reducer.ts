@@ -9,7 +9,7 @@ export interface NYTState {
   error?: any;
 }
 
-const initialState: NYTState = {
+export const initialState: NYTState = {
   entities: {},
   loading: false,
   loaded: false,
@@ -51,7 +51,7 @@ export function nytReducer(state = initialState, action: NewsAction): NYTState {
         ...state,
         error: action.payload,
         loading: false,
-        loaded: true
+        loaded: false
       };
     }
   }
