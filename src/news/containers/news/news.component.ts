@@ -15,13 +15,14 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
+  readonly TITLE = 'Trusting Social - The New York Times';
   private page = 0;
 
   news$: Observable<Array<News>>;
   loading$: Observable<boolean>;
 
   constructor(private title: Title, private store: Store<NewsState>, private dialog: MatDialog) {
-    title.setTitle('Trusting Social - The New York Times');
+    title.setTitle(this.TITLE);
   }
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class NewsComponent implements OnInit {
       data: news,
       width: '1000px'
     };
-    const dialogRef = this.dialog.open(NewsDetailComponent, config);
+
+    this.dialog.open(NewsDetailComponent, config);
   }
 }

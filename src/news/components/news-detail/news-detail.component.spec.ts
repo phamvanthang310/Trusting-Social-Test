@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewsDetailComponent } from './news-detail.component';
 import { MaterialModule } from '../../../share/material.module';
 import { By } from '@angular/platform-browser';

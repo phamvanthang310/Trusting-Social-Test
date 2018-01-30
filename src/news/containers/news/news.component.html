@@ -1,9 +1,9 @@
 <div class="news">
-  <div class="news__container mat-elevation-z2" *ngFor="let details of (news$ | async); trackBy: trackByNews"
+  <div class="news__container mat-elevation-z2" *ngFor="let details of news$ | async; trackBy: trackByNews"
        (click)="onClick(details)">
     <app-news-item [details]="details"></app-news-item>
   </div>
-  <div class="news__loading center" *ngIf="(loading$ | async)">
+  <div class="news__loading center" *ngIf="loading$ | async">
     <mat-spinner [diameter]="50" color="accent" mode="intermediate"></mat-spinner>
   </div>
   <div class="news__load-more">

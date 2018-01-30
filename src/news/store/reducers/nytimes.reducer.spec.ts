@@ -1,12 +1,6 @@
 import { initialState, nytReducer, NYTState } from './nytimes.reducer';
-import {
-  LoadNewYorkTimes,
-  LoadNewYorkTimesFailed,
-  LoadNewYorkTimesSuccess,
-  NewsAction
-} from '../actions/nytimes.action';
-import { Response } from '../../models/response';
-import { News } from '../../models/news';
+import { LoadNewYorkTimes, LoadNewYorkTimesFailed, LoadNewYorkTimesSuccess, NewsAction } from '../actions';
+import { News, Response } from '../../models';
 
 describe('The New York Times Reducers', () => {
   describe('undefined action', () => {

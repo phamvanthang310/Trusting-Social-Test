@@ -1,5 +1,4 @@
 import { inject, TestBed } from '@angular/core/testing';
-
 import { NYTimesServices } from './nytimes.services';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';

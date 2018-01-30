@@ -1,27 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { NytimesEffect } from './nytimes.effect';
 import { NYTimesServices } from '../../services/nytimes.services';
-import { Observable } from 'rxjs/Observable';
-import { Response } from '../../models/response';
+import { Response } from '../../models';
 import { of } from 'rxjs/observable/of';
 import { Actions } from '@ngrx/effects';
-import { empty } from 'rxjs/observable/empty';
-import { LoadNewYorkTimes, LoadNewYorkTimesSuccess } from '../actions/nytimes.action';
+import { LoadNewYorkTimes, LoadNewYorkTimesSuccess } from '../actions';
 import { marbles } from 'rxjs-marbles';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
-class TestActions extends Actions {
-  constructor() {
-    super(empty());
-  }
-
-  set stream(source: Observable<any>) {
-    this.source = source;
-  }
-}
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Observable } from 'rxjs/Observable';
 
 describe('NytimesEffect', () => {
-  let action$: TestActions;
+  let action$: Observable<any>;
   let service: NYTimesServices;
   let effect: NytimesEffect;
 
@@ -44,7 +34,7 @@ describe('NytimesEffect', () => {
       providers: [
         NytimesEffect,
         NYTimesServices,
-        {provide: Actions, useValue: new TestActions()}
+        provideMockActions(() => action$),
       ]
     });
 
@@ -66,7 +56,7 @@ describe('NytimesEffect', () => {
       const action = new LoadNewYorkTimes(0);
       const completion = new LoadNewYorkTimesSuccess(response);
 
-      action$.stream = m.hot('-a', {a: action});
+      action$ = m.hot('-a', {a: action});
       const expected = m.cold('-b', {b: completion});
 
       m.expect(effect.loadNewYorkTimes$).toBeObservable(expected);
