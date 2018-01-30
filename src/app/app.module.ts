@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './containers/page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../share/material.module';
-import { FooterComponent, HeaderComponent } from './components';
+import { components } from './components';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from '../environments/environment';
 import { MetaReducer, StoreModule } from '@ngrx/store';
@@ -24,8 +24,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    FooterComponent,
-    HeaderComponent,
+    ...components
   ],
   imports: [
     BrowserModule,

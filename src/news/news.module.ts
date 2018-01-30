@@ -10,6 +10,7 @@ import { effects } from './store/effects';
 import { services } from './services';
 import { components, NewsDetailComponent } from './components';
 import { NewsComponent } from './containers/news/news.component';
+import { containers } from './containers/index';
 
 const newsRoutes: Routes = [
   {path: '', component: NewsComponent}
@@ -25,7 +26,7 @@ const newsRoutes: Routes = [
     EffectsModule.forFeature(effects)
   ],
   declarations: [
-    NewsComponent,
+    ...containers,
     ...components,
   ],
   providers: [

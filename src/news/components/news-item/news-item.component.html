@@ -1,18 +1,16 @@
 <div class="news__item">
-  <div class="news__header">
-    <div class="snipped">
-      {{details?.headline.main}}
-    </div>
-    <div class="pub-date">
-      {{details?.pub_date | date:'medium'}}
-    </div>
+  <div class="news__headline">
+    {{details?.headline.main}}
+  </div>
+  <div class="news__pub-date">
+    {{details?.pub_date | date:'medium'}}
   </div>
   <div class="news__multimedia" *ngIf="details.multimedia[0]">
     <img [src]="'http://www.nytimes.com/' + details.multimedia[0]?.url" alt="">
   </div>
   <div class="news__footer">
-    <div class="source">
-      <span>Source: </span>{{details?.source}}
+    <div class="news__source">
+      Source: {{details?.source}}
     </div>
   </div>
 </div>

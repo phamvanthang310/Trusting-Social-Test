@@ -1,4 +1,4 @@
-import { Multimedia } from './Multimedia';
+import { Multimedia } from './multimedia';
 
 export interface News {
   _id: string;

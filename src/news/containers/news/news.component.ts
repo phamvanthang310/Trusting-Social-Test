@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit {
   loading$: Observable<boolean>;
 
   constructor(private title: Title, private store: Store<NewsState>, private dialog: MatDialog) {
-    title.setTitle('TrustingSocialTest | ThangPham');
+    title.setTitle('Trusting Social - The New York Times');
   }
 
   ngOnInit() {

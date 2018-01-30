@@ -10,19 +10,16 @@
     }
   }
 
-  &__header {
+  &__headline {
+    font-size: 20px;
+    font-weight: bold;
+    color: $charcoal;
+  }
 
-    .snipped {
-      font-size: 20px;
-      font-weight: bold;
-      color: $charcoal;
-    }
-
-    .pub-date {
-      color: $dark-gray;
-      font-size: 15px;
-      padding: 10px 0;
-    }
+  &__pub-date {
+    color: $dark-gray;
+    font-size: 15px;
+    padding: 10px 0;
   }
 
   &__multimedia {
@@ -34,10 +31,10 @@
 
   &__footer {
     padding: 10px 0 0 0;
+  }
 
-    .source {
-      text-align: right;
-      color: $charcoal;
-    }
+  &__source {
+    text-align: right;
+    color: $charcoal;
   }
 }
