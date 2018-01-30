@@ -31,7 +31,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
-    StoreModule.forRoot([], {metaReducers}),
+    StoreModule.forRoot({}, {metaReducers}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
