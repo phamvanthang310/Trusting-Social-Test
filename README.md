@@ -12,6 +12,10 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Running Prod Application as Server Side Rendering
+
+Run `npm run prod:ssr`. Navigate to `http://localhost:4000/`
+
 ## Running unit tests
 
 Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -22,7 +26,7 @@ Coverage report will be in the `coverage/directory`
 
 Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Technology stacks used
+## 3rd party library used
 * [Angular Material](https://material.angular.io/): Material Design components for Angular
 * [@ngrx](https://github.com/ngrx/platform): Reactive libraries for Angular
   * [@ngrx/store](https://github.com/ngrx/platform/blob/master/docs/store/README.md): RxJS powered state management for Angular applications, inspired by Redux.
